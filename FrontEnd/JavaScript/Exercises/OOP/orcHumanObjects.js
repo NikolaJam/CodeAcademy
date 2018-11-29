@@ -3,7 +3,7 @@
 
 // The orc has 720 hitpoints, does 23-35 damage and has 5 armor. 
 //The human footman has 550 hitpoints, does 18-27 damage, 
-//but has a shield that gives him 9 armor. 
+//but has a shield that gives him 15 armor. 
 
 // Shields and armor deduct the damage that the fighter takes. 
 // Who will win the fight?
