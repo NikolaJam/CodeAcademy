@@ -48,7 +48,7 @@ function battle(orc, human) {
 
     var hHp1, hHp2;                                             
     var oHp1, oHp2;
-    var counter = 1;
+    var counter = 0;
     var critChance;
     
     while (orc.hitpoints > 0 && human.hitpoints > 0) {

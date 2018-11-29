@@ -16,18 +16,18 @@ function fight() {
 
     var orcWarrior = 720;
     var humanFootman = 580;
-    var pom1,pom2;
+    var pom1, pom2;
 
-    while (orcWarrior>0&& humanFootman>0) {
+    while (orcWarrior > 0 && humanFootman > 0) {
 
-        pom1=getRandomInt(18, 27) - 15;
+        pom1 = getRandomInt(18, 27) - 15;
         orcWarrior -= pom1;
-        pom2=getRandomInt(23, 35) - 9;
+        pom2 = getRandomInt(23, 35) - 9;
         humanFootman -= pom2;
- 
+
     }
 
-    if (orcWarrior<=0) {
+    if (orcWarrior <= 0) {
 
         console.log("The human is victorious");
 
