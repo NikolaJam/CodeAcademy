@@ -20,7 +20,7 @@ function bear(weight, name) {
         }
         else {
 
-            console.log("My weight is none of your concern, but if you must know - I weigh", Math.floor(this.weight), " kg's.");
+            console.log("I weigh", Math.floor(this.weight), " kg's.");
         }
 
         return this.weight;
@@ -32,7 +32,7 @@ function bear(weight, name) {
 
             this.weight -= this.weight * 10 / 100;
             this.weight += animal.weight / 2;
-            console.log("I run into a " + animal.name + ", it was a bit feisty, but delicious anyway, my current weight is:", Math.floor(this.weight), " kg's.");
+            console.log("I ran into a " + animal.name + ", it was a bit feisty, but delicious anyway, my current weight is:", Math.floor(this.weight), " kg's.");
         }
 
         else {
