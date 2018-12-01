@@ -57,4 +57,4 @@ function differentNext(n, x) {
 
 }
 
-differentNext(350,390);
+compareDigits(350,390);
