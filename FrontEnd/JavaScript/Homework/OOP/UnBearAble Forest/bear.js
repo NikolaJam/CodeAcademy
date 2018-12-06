@@ -1,29 +1,42 @@
  
-function bear(weight, name) {
+function Bear() {
 
-    this.name = name;
-    this.weight = weight;
-    this.minWeight = randomNum(weight/2, weight);
-    this.maxWeight = randomNum(weight, weight*1.5);
+    this.name = nameGenerator();
+    this.weight = randomNum(300,500);
+    this.minWeight = randomNum(this.weight/2, this.weight/1.5);
+    this.maxWeight = randomNum(this.weight*1.25, this.weight*1.5);
+    this.isAlive=true;
+    this.isFat=false;
 
+    console.log("Hello world, I'm a",this.name,"bear, and I will try to survive for a month in this dark forest!")
+    console.log("My starting weight is",this.weight,"kg's.");
+    console.log("If my weight goes bellow",this.minWeight,"kg's, I will die :(");
+    console.log("If my weight goes above",this.maxWeight,"kg's, I will take a nap for a whole day! Yay.");
+    console.log("Wish me luck, here I go!");
+    
     this.checkWeight = function () {
 
         if (this.weight < this.minWeight) {
 
-            console.log("I weigh only", Math.floor(this.weight), "kg's, goodbye cruel world!");        
+            console.log("I weigh only", Math.floor(this.weight), "kg's, goodbye cruel world!");
+            this.isAlive=false;
+            this.isFat=false;                       //unnecessary I know, but for logic's sake, the bear died of hunger, it can't be fat.
+
         }
         else if (this.weight > this.maxWeight) {
 
-            console.log("It appears that I'm", Math.floor(this.weight), "kg fat, I will take a nap for a day, and use 10% of my reserves!");
-            this.weight -= this.weight * 20 / 100;
+            console.log("It appears that I'm", Math.floor(this.weight), "kg fat, I will take a nap for a day, and use some of my reserves!");
+            this.weight -= this.weight * 15 / 100;
+            this.isFat=true;
 
         }
         else {
 
+            this.isFat=false;
             console.log("I weigh", Math.floor(this.weight), " kg's.");
         }
 
-        return this.weight;
+        return this.weight;                                                         //not used anywhere, just in case.
     }
 
     this.byeBye = function (animal) {
@@ -42,44 +55,3 @@ function bear(weight, name) {
         }
     }
 }
-
-var polarBear = new bear(500, "Polar");
-var grizlyBear = new bear(450, "Grizzly");
-var kodiakBear = new bear(400, "Kodiak");
-var brownBear = new bear(350, "Brown");
-var yogiBear = new bear(300, "Yogi");
-
-var bears=[];
-bears.push(polarBear);
-bears.push(grizlyBear);
-bears.push(kodiakBear);
-bears.push(brownBear);
-bears.push(yogiBear);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// kodiakBear.byeBye(animals[0]);
-// kodiakBear.byeBye(animals[1]);
-// kodiakBear.byeBye(animals[2]);
-// kodiakBear.byeBye(animals[3]);
-// kodiakBear.byeBye(animals[4]);
-// kodiakBear.byeBye(animals[5]);
-// kodiakBear.byeBye(animals[6]);
-// // kodiakBear.byeBye(wolf);
-// // kodiakBear.byeBye(boar);
-// kodiakBear.checkWeight();

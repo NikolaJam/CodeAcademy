@@ -1,19 +1,25 @@
 
-function hunter(bear){
+function Hunter() {
 
-    var indicator;
-    if(bear.weight>bear.maxWeight){
+    this.toHunt = function (bear) {
 
-        console.log("The hunter has killed  the "+bear.name+" bear because it was too fat to run, this story is over.");
-        indicator=true;
+        var indicator;
+
+        if (bear.isFat) {
+
+            console.log("The hunter has killed  the " + bear.name + " bear because it was too fat to run, this story is over.");
+            indicator = true;
+            bear.isAlive=false;
+        }
+        
+        else {
+
+            var bw = bear.weight;
+            bear.weight -= bear.weight * 10 / 100;
+            console.log("I, the " + bear.name + " bear, have escaped the hunter but also lost", Math.floor(bw -= bear.weight), "kg's");
+            indicator = false;
+        }
+        
+        return indicator;
     }
-    else{
-        var bw=bear.weight;
-        bear.weight-=bear.weight*10/100;
-       console.log("I, the "+bear.name+" bear, have escaped the hunter but also lost",Math.floor(bw-=bear.weight),"kg's");
-       indicator=false;
-    }
-    return indicator;
 }
-
-
