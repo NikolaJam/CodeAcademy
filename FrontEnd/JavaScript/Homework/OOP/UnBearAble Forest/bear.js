@@ -20,7 +20,7 @@ function Bear() {
 
             console.log("I weigh only", Math.floor(this.weight), "kg's, goodbye cruel world!");
             this.isAlive=false;
-            this.isFat=false;                       //unnecessary I know, but for logic's sake, the bear died of hunger, it can't be fat.
+            this.isFat=false;                       
 
         }
         else if (this.weight > this.maxWeight) {
@@ -46,12 +46,27 @@ function Bear() {
             this.weight -= this.weight * 10 / 100;
             this.weight += animal.weight / 2;
             console.log("I ran into a " + animal.name + ", it was a bit feisty, but delicious anyway, my current weight is:", Math.floor(this.weight), " kg's.");
+            animal.isEaten();
         }
 
         else {
 
             this.weight += animal.weight;
             console.log("I found a " + animal.name + " and it was de-licious, my current weight is:", Math.floor(this.weight), " kg's.");
+            animal.isEaten();
         }
+    }
+
+    this.seppuku = function(){
+
+        console.log("The hunter has killed me, the " + this.name + " bear because I was too fat to run, these are my last words.");
+        this.isAlive=false;
+
+    }
+    this.escaped=function(){
+
+        var bw = this.weight;
+        this.weight -= this.weight * 10 / 100;
+        console.log("I, the " + this.name + " bear, have escaped the hunter but also lost", Math.floor(bw -= this.weight), "kg's");
     }
 }

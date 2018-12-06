@@ -7,22 +7,15 @@ function Forest() {
 
     this.bear = new Bear();
     this.hunter = new Hunter();
-
-    this.wildcat = new Animal("Wildcat", 25, "carnivore");              //I'm not using random generated animals so we don't get a 100kg rabbit
-    this.badger = new Animal("Badger", 30, "carnivore");                //and also, this proved to be a good exercise for objects in arrays
-    this.rabbit = new Animal("Rabbit", 10, "herbivore");
-    this.boar = new Animal("Boar", 100, "herbivore");
-    this.deer = new Animal("Deer", 80, "herbivore");
-    this.wolf = new Animal("Wolf", 50, "carnivore");
-    this.fox = new Animal("Fox", 30, "carnivore");
+   
     this.animals = [];
-    this.animals.push(this.wildcat);
-    this.animals.push(this.rabbit);
-    this.animals.push(this.deer);
-    this.animals.push(this.boar);
-    this.animals.push(this.wolf);
-    this.animals.push(this.fox);
-    this.animals.push(this.badger);
+    this.animals.push(new Animal("Wildcat", 25, "carnivore"));
+    this.animals.push(new Animal("Rabbit", 10, "herbivore"));
+    this.animals.push(new Animal("Deer", 80, "herbivore"));
+    this.animals.push(new Animal("Boar", 100, "herbivore"));
+    this.animals.push(new Animal("Wolf", 50, "carnivore"));
+    this.animals.push(new Animal("Fox", 30, "carnivore"));
+    this.animals.push(new Animal("Badger", 30, "carnivore"));
 
     this.oneDay = function (number) {
 
