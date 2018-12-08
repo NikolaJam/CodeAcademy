@@ -19,8 +19,9 @@ function Team(name) {
         for (let index = 1; index <= this.numOfPlayers; index++) {
             
             var i=index;
-            var indicator=false;
-        if(this.players[i].playerScored){
+            var indicator=false
+            var helper=this.players[i].playerScored;
+        if(helper){
             indicator = true;
             }
             else{
