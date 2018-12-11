@@ -4,7 +4,7 @@ function Player(){
     this.goals=randomNum(0, 15);                        //generates a random number of goals between 0-15;
     this.isStar=percentChance(30);                      //has a 30% chance to declare the player as a star;
 
-    this.playerScored;
+    this.playerScored=false;
 
     this.scoredGoal = function(){
     console.log(this.name,"has scored a goal");
