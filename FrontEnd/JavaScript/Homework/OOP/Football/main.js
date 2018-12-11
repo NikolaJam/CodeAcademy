@@ -14,30 +14,32 @@
 // number of goals scored, number of t-shirts sold, number 
 // of seat tickets bought and the total sum of damage from hooligans.
 
-function main(){
+function main() {
 
- 
+
     var stadium = new Stadium("Gradski", 20000, "Vardar");
-    var luck = 30;
-    for(var i=1;i<=30;i++){
-        var pom=i;
+    var luck = 30;                                                      //% chance to score a goal in a given day
+    var earnings = 0;
+    for (var i = 1; i <= 30; i++) {
+        var pom = i;
+        console.log("");
         console.log("Day ",pom);
-        if(percentChance(luck)){
-        
-             stadium.team.players[randomNum(0,stadium.team.players.length-1)].scoredGoal();
-        
+        if (percentChance(luck)) {
+            stadium.team.players[randomNum(0, stadium.team.players.length - 1)].scoredGoal();
         }
-
-        if(pom%8==0){
-             stadium.team.removeWorst();
-             stadium.team.hireStar();
+        else{
+            console.log("Today there are no goals");
         }
-
-    var earnings=0;
-    earnings += stadium.profit();
-
+        if (pom % 8 == 0) {
+            stadium.team.removeWorst();
+            stadium.team.hireStar();
+        }
+        Math.floor(earnings += stadium.profit());
+        stadium.team.resetFlags();                                      //resets the scoredGoal flag, so we don't get unreal goal nums;
     }
-    console.log("After 30 days of matches, our club has earned ",earnings,"and scored ",stadium.team.points," goals")
+    console.log("");
+    console.log("After 30 days of matches, our club has earned", earnings, "dineros, and sold " + Math.floor(stadium.numOfShirts) + " shirts");
+    console.log("We have scored",stadium.team.points,"goals");
 }
- main();
+main();
 
