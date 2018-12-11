@@ -18,19 +18,24 @@ function main() {
 
 
     var stadium = new Stadium("Gradski", 20000, "Vardar");
-    var luck = 30;                                                      //% chance to score a goal in a given day
+    var luck = 30;                                                      //% chance to score a goal in a given day;
     var earnings = 0;
+    console.log("");
+    console.log("We are at "+stadium.name+" stadium, at the begining of the month");
     for (var i = 1; i <= 30; i++) {
+
         var pom = i;
         console.log("");
-        console.log("Day ",pom);
+        console.log("Day",pom);
+
         if (percentChance(luck)) {
             stadium.team.players[randomNum(0, stadium.team.players.length - 1)].scoredGoal();
         }
         else{
             console.log("Today there are no goals");
         }
-        if (pom % 8 == 0) {
+
+        if (pom % 8 == 0) {                                             //every 8 days, kick the worst, and hire a star;
             stadium.team.removeWorst();
             stadium.team.hireStar();
         }
@@ -38,7 +43,7 @@ function main() {
         stadium.team.resetFlags();                                      //resets the scoredGoal flag, so we don't get unreal goal nums;
     }
     console.log("");
-    console.log("After 30 days of matches, our club has earned", earnings, "dineros, and sold " + Math.floor(stadium.numOfShirts) + " shirts");
+    console.log("After 30 days of matches, our club has earned", Math.floor(earnings), "dineros, and sold " + Math.floor(stadium.numOfShirts) + " shirts");
     console.log("We have scored",stadium.team.points,"goals");
 }
 main();

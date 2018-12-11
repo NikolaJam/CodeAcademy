@@ -7,9 +7,9 @@ function Player(){
     this.playerScored=false;
 
     this.scoredGoal = function(){
-    console.log(this.name,"has scored a goal");
-    this.goals+=1;
-    this.playerScored=true;
+        console.log(this.name,"has scored a GOOOAAAL");
+        this.goals+=1;
+        this.playerScored=true;
     }
 
     this.showPlayer = function(){

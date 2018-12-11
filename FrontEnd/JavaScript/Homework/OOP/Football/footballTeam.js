@@ -6,6 +6,9 @@ function Team(name) {
     this.players = [];
 
     this.generateTeam = function () {
+        
+        console.log("Our team " + this.name + " has 22 players, and they are:");
+
         for (let index = 1; index <= this.numOfPlayers; index++) {
             this.players.push(player = new Player());
             console.log(index + ".", player.name, " and he has ", player.goals, "goals. He is a", player.isStar, "star")
@@ -13,11 +16,10 @@ function Team(name) {
     }
 
     this.teamScored = function () {                                               //check all the players for a scoredGoal flag
-        var j;
+        
         for (let index = 0; index < this.numOfPlayers; index++) {
-            var indicator;
-            j=index;
-            if (this.players[j].playerScored === true) {
+            var indicator=false;
+            if (this.players[index].playerScored === true) {
                 indicator = true;
                 this.points += 1;
             }
@@ -44,7 +46,7 @@ function Team(name) {
 
     this.removeWorst = function () {
         var worst = this.findWorst();
-        console.log(this.players[worst].name, " is no longer in our team, he was the worst player with ", this.players[worst].goals, "goals");
+        console.log(this.players[worst].name, "is no longer in our team, he was the worst player with", this.players[worst].goals, "goals");
         this.players.splice(worst, 1);
         this.numOfPlayers--;
     }
@@ -68,5 +70,4 @@ function Team(name) {
         }
 
     }
-
 }

@@ -14,20 +14,13 @@ function Stadium(name,seats,team){
 
     this.hooligans=Math.floor(this.visitors()*10/100);                //10% of the visitors are hooligans.
 
-    var scoreFLag=this.team.teamScored();
     
-    this.fanShop=function(){
+    this.fanShop=function(){                                        //if there is a goal that day, 25% of visitors will buy a shirt
         var tShirts=0;
-        if(scoreFLag){
-            console.log(25);
-            tShirts=this.visitors()*25/100;
-        }
-        else{
-            console.log(10);
-            tShirts=this.visitors()*10/100;
-        }
+        this.team.teamScored() ?tShirts=this.visitors()*25/100 :tShirts=this.visitors()*10/100;
+        
         this.numOfShirts+=tShirts;
-        return tShirts*10;
+        return tShirts*25;
     }
 
     this.profit = function(){
