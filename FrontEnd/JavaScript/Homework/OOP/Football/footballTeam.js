@@ -9,9 +9,9 @@ function Team(name) {
         
         console.log("Our team " + this.name + " has 22 players, and they are:");
 
-        for (let index = 1; index <= this.numOfPlayers; index++) {
-            this.players.push(player = new Player());
-            console.log(index + ".", player.name, " and he has ", player.goals, "goals. He is a", player.isStar, "star")
+        for (let index = 0; index <this.numOfPlayers; index++) {
+            this.players.push(player = new Player(index+1));
+            this.players[index].showPlayer();        
         }
     }
 
