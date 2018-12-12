@@ -15,7 +15,7 @@ function Player(number){
 
     this.showPlayer = function(){
 
-        console.log(this.number+"."+this.name+" and he has "+this.goals+"goals. He is a"+this.isStar+"star")
+        console.log(this.number+". "+this.name+" and he has "+this.goals+" goals. He is a "+this.isStar+" star")
 
     }
 
