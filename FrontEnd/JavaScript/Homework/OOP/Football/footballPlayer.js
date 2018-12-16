@@ -1,24 +1,16 @@
-function Player(number){
+this.playMatch = function() {
+        
+    for (var i = 0; i < this.players.length; i++) {
+        var pomosna = false;
+        if(this.players[i].checkIfScore()){
+            pomosna = true;
+            console.log("On this match we scored goal and the scorer was ", this.players[i].name);
 
-    this.name=generateName();                          
-    this.goals=randomNum(0, 15);                        //generates a random number of goals between 0-15;
-    this.isStar=percentChance(30);                      //has a 30% chance to declare the player as a star;
-    this.number=number;
-
-    this.playerScored=false;
-
-    this.scoredGoal = function(){
-        console.log(this.name,"has scored a GOOOAAAL");
-        this.goals+=1;
-        this.playerScored=true;
+        }else {
+            pomosna = false;
+            console.log("No one from the players scored today maybe are not fit for our club");
+            
+        }
+        return pomosna;
     }
-
-    this.showPlayer = function(){
-
-        console.log(this.number+". "+this.name+" and he has "+this.goals+" goals. He is a "+this.isStar+" star")
-
-    }
-
-    
 }
-
