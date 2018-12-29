@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background-color: rgb(236, 236, 236);
 }
 .artist-container{
     width: 30%;
@@ -29,6 +30,8 @@
 
 .artist-bio{
     margin-top: 10px;
+    /* height: 300px; */
+    overflow: hidden;
     color:darkblue;
     text-align: justify;
 }
