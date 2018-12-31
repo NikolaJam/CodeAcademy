@@ -1,5 +1,4 @@
 
-
 import { ArtistLogic } from "/business-layer/artistLogic.js";
 import * as jquerry from "/jquery-3.3.1.js"
 
@@ -10,22 +9,21 @@ export function RenderArtist() {
     this.artistPageData = new ArtistLogic();
     this.artistData = {};
     this.renderAll = async function (artistName) {
+
         this.artistData = await this.artistPageData.getArtistPageData(artistName);
 
-        $("<div>").attr("id", "main-container").addClass("main-container").prependTo("body");
-        $("<div>").addClass("artist-container").appendTo("#main-container");
-        $("<div>").addClass("artist-top").append(this.renderSimilar()).appendTo(".artist-container");
-        $("<div>").addClass("artist").prependTo(".artist-top");
+        $("<div>").attr("id", "main-container").addClass("main-container").prependTo("body");           //main contain
+        $("<div>").addClass("artist-container").appendTo("#main-container");                            //artist main
+        $("<div>").addClass("artist-top").append(this.renderSimilar()).appendTo(".artist-container");   //artist top
+        $("<div>").addClass("artist").prependTo(".artist-top");                                      //artist name photo
         $("<div>").addClass("artist-bottom").appendTo(".artist-container");
-
-    
-            $(".artist").append(this.renderArtistProfile())
-            .append(this.renderArtistPhoto())
-            .append(this.renderBio());
+        $("<div>").addClass("top-tracks-container").append(this.renderAlbumTracks()).prependTo(".artist-top");
+        $(".artist").append(this.renderArtistProfile())
+        .append(this.renderArtistPhoto())
+        .append(this.renderBio());
         
-            // .append(this.renderAlbumPublished())
-            $(".artist-bottom").append(this.renderArtistAlbum())
-            .append(this.renderAlbumTracks());
+        // .append(this.renderAlbumPublished())
+        $(".artist-bottom").append(this.renderArtistAlbum());
 
     }
     this.renderArtistProfile = function () {
@@ -42,6 +40,7 @@ export function RenderArtist() {
 
     this.renderSimilar = function () {
         var similarMain = $("<div>").addClass("similarMain");
+        $("<span>").addClass("similar-title").html("Similar Artists").appendTo(similarMain);
 
         for (let index = 0; index < this.artistData.artist.similar.artist.length; index++) {
 
@@ -67,28 +66,26 @@ export function RenderArtist() {
 
     this.renderArtistAlbum = function () {
 
-        var $albums = $("<div>").addClass("artist-album").appendTo(".main-container");
+        var $albums = $("<div>").addClass("artist-album");
         for (let index2 = 0; index2 < 5/*this.artistData.album.length*/; index2++) {
-
-            $("<h3>").addClass("albumName").html(this.artistData.album[index2].name).appendTo($albums);
-            $("<img>").addClass("album-photo").attr("src", this.artistData.album[index2].image[2]["#text"]).appendTo($albums);
+            var $album = $("<div>").addClass("album").appendTo($albums);
+            $("<h3>").addClass("albumName").html(this.artistData.album[index2].name).appendTo($album);
+            $("<img>").addClass("album-photo").attr("src", this.artistData.album[index2].image[2]["#text"]).appendTo($album);
             for (let index3 = 0; index3 < this.artistData.album[index2].tracks.track.length; index3++){
 
                 $("<span>").addClass("track-name").html((index3+1)+". "+this.artistData.album[index2].tracks.track[index3].name)
-                .appendTo($albums);
-    
+                .appendTo($album);
             }
         }
         return $albums;
     }
+
     this.renderAlbumTracks = function (){
+        var $tracks = $("<div>").addClass("top-tracks");
+        $("<span>").addClass("similar-title").html("Top 20 Hits").appendTo($tracks);
 
-        var $tracks = $("<div>").addClass("album-tracks");
-        
-        for (let index3 = 0; index3 < 10; index3++){
-
-            $("<div>").addClass("track-name").html(this.artistData.tracks[index3].name).appendTo($tracks);
-
+        for (let index4 = 0; index4 < 20; index4++){
+            $("<div>").addClass("top-tracks").html((index4+1)+". "+this.artistData.tracks[index4]).appendTo($tracks);
         }
         return $tracks;
     }

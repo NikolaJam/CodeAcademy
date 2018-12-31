@@ -1,11 +1,10 @@
-#main-container{
+#main-container {
     width: 100%;
     background-color: rgb(236, 236, 236);
 }
-.artist-container{
+
+.artist-container {
     width: 100%;
-    display: flex;
-    flex-direction:column;
     background-color: rgb(250, 249, 249);
     padding: 15px;
     margin: 30px;
@@ -13,32 +12,49 @@
     line-height: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.artist-top{
+
+.artist-top {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 80%;
     height: 500px;
     display: flex;
     margin: 50px;
-    
 }
-img{
+
+.top-tracks-container {
+    width: 30%;
+    display: flex;
+    height: 500px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 10px;
+    box-shadow: 5px 10px 18px lime;
+}
+
+.top-tracks {
+    font-size: 20px;
+    margin: 3px;
+    margin-left: 10px;
+}
+
+img {
     margin: 10px;
 }
-.artist{
-    width: 60%;
+
+.artist {
+    width: 30%;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    margin: 10px;
     height: 100%;
     align-items: center;
     justify-content: center;
     box-shadow: 5px 10px 18px lime;
-
 }
-.similarMain{
+
+.similarMain {
     width: 30%;
     height: 100%;
     margin: 10px;
@@ -48,48 +64,77 @@ img{
     padding: 20px;
     justify-content: space-between;
     box-shadow: 5px 10px 18px lime;
-    
 }
-.similar{ 
+
+.similar-title {
+    font-size: 40px;
+    align-self: center;
+    color: brown;
+    margin-bottom: 20px;
+}
+
+.similar {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px;
 }
 
-.artist-bottom{
+.artist-bottom {
     width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 50px;
-    box-shadow: 5px 10px 18px lime;
+    /* box-shadow: 5px 10px 18px lime; */
 }
-a{
+
+a {
     /* text-decoration: none; */
     color: green;
 }
-.artist-name{
+
+.artist-name {
     color: red;
     font-size: 50px;
     margin: 10px;
     margin-bottom: 20px;
 }
-.track-name{
-    align-self: flex-start;
-    margin-left: 130px;
-    color: darkred;
+
+h3 {
+    text-align: center;
 }
-.artist-album{
+
+.track-name {
+    /* display: none; */
+    align-self: flex-start;
+    color: darkred;
+    margin-left: 20px;
+}
+
+.artist-album {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.album {
+    width: calc(20% - 10px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 10px 18px rgb(0, 217, 255);
 }
-.artist-bio{
+
+.artist-bio {
     margin-top: 10px;
     /* height: 300px; */
     overflow: hidden;
-    color:darkblue;
+    color: darkblue;
     text-align: justify;
 }
