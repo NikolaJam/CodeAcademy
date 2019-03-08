@@ -6,4 +6,4 @@ Categorized by frontend/backend and class name.
 
 Author: Nikola Jamandilovski.
 
-© 2018 
+© 2018 / 2019
