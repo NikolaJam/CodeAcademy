@@ -1,0 +1,57 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "eslint:recommended"
+  ],
+  "plugins": [
+    "import",
+    "flowtype",
+    "flowtype-errors"
+  ],
+  "rules": {
+    "no-console": "off",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "linebreak-style": 0,
+    "flowtype/define-flow-type": 1,
+    "flowtype/delimiter-dangle": 0,
+    "flowtype/generic-spacing": [
+      2,
+      "never"
+    ],
+    "flowtype/no-weak-types": 0,
+    "flowtype/require-parameter-type": 0,
+    "flowtype/require-return-type": 0,
+    "flowtype/require-valid-file-annotation": 0,
+    "flowtype/no-unused-expressions": 1,
+    "flowtype-errors/show-errors": 0,
+    "camelcase": 0,
+    "flowtype/type-id-match": 0,
+    "flowtype/union-intersection-spacing": [
+      2,
+      "always"
+    ],
+    "flowtype/use-flow-type": 1,
+    "flowtype/valid-syntax": 1,
+    "flowtype/no-types-missing-file-annotation": 0,
+    "no-unused-vars": 0,
+    "no-delete-var": "off",
+    "max-len": 0,
+    "strict": 0,
+    "comma-dangle": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
+  }
+}

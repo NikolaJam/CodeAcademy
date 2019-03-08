@@ -1,0 +1,17 @@
+{
+	"presets": [
+		["env", {
+			"targets": {
+				"node": "current"
+			}
+		}],
+		"flow",
+	],
+	"plugins": [
+		"syntax-flow",
+		"transform-flow-strip-types",
+		"transform-flow-comments",
+		"typecheck",
+	],
+	"retainLines": false
+}
