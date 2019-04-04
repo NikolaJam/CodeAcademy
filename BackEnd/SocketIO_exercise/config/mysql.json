@@ -1,0 +1,28 @@
+{
+  "dev": {
+    "username": "root",
+    "password": "1234",
+    "database": "messages",
+    "host": "localhost",
+    "port": 3306,
+    "dialect": "mysql",
+    "operatorsAliases": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 10000,
+      "idle": 10000
+    },
+    "dialectOptions": {
+      "socketPath": "/var/run/mysqld/mysqld.sock"
+  },
+  "define": {
+    "paranoid": true
+  }
+  },
+  "staging": {
+  },
+  "production": {
+ 
+  }
+ }
